@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "minimumReleaseAge": "3 days",
+  "rebaseWhen": "behind-base-branch",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "autoApprove": true
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "automerge": true
+    }
+  ],
+  "customManagers": [  
+    {  
+      "customType": "regex",  
+      "description": "Update ARG versions in Dockerfiles",  
+      "managerFilePatterns": [  
+        "/(^|/|\\.)Dockerfile$/",  
+        "/(^|/)Dockerfile\\.[^/]*$/"  
+      ],  
+      "matchStrings": [  
+        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\sARG .+?_VERSION=(?<currentValue>.+?)\\s"  
+      ]  
+    }  
+  ],
+  "platformAutomerge": true,
+  "autoApprove": true
+}
