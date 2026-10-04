@@ -3,7 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "minimumReleaseAge": "3 days",
   "rebaseWhen": "behind-base-branch",
   "lockFileMaintenance": {
     "enabled": true,

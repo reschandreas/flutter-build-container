@@ -1,6 +1,6 @@
 FROM alpine
 
-# renovate: datasource=github-tags depName=flutter/flutter versioning=semver-coerced  
+# renovate: datasource=git-tags depName=https://github.com/flutter/flutter.git versioning=semver-coerced
 ARG FLUTTER_VERSION=3.47.6
 
 RUN apk update
