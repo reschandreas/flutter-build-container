@@ -1,7 +1,7 @@
 FROM alpine
 
 # renovate: datasource=git-tags depName=https://github.com/flutter/flutter.git versioning=semver-coerced
-ARG FLUTTER_VERSION=3.47.6
+ARG FLUTTER_VERSION=3.47.7
 
 RUN apk update
 RUN apk add git gcompat clang cmake ninja pkgconfig bash curl
